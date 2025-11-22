@@ -66,9 +66,10 @@ def compute(age: int, income: float, earned_income: float) -> float:
     # 4. Basic income tax
     basic_income_tax = compute_basic_income_tax(income)
     
-    cum_guaranteed_income = cwd_basic_income + guaranteed_basic_income
-    
+    # 5. EITC
     eitc = compute_eitc(earned_income)
+    
+    cum_guaranteed_income = cwd_basic_income + guaranteed_basic_income
     
     return Output(
         cum_guaranteed_income=cum_guaranteed_income,
